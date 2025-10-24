@@ -1,0 +1,30 @@
+{
+  "name": "private-markets-api",
+  "version": "1.0.0",
+  "author": "Calum Mortimer",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "npm run dev:spinup && npm run dev:migrate && npm run dev:build && DATABASE_URL=postgres://postgres:postgres@127.0.0.1:5434/postgres TZ=UTC node dist/index.js",
+    "dev:build": "tsc",
+    "dev:spinup": "POSTGRES_PORT=5434 CONTAINER_NAME=dev docker compose up -d",
+    "dev:migrate": "dbmate --wait -u 'postgres://postgres:postgres@127.0.0.1:5434/postgres?sslmode=disable' up",
+    "test": "DATABASE_URL=postgres://postgres:postgres@127.0.0.1:5433/postgres TZ=UTC vitest --run",
+    "test:coverage": "DATABASE_URL=postgres://postgres:postgres@127.0.0.1:5433/postgres TZ=UTC vitest --run --coverage"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^10.1.0",
+    "@types/lodash": "^4.17.20",
+    "@types/node": "^24.3.1",
+    "@types/pg": "^8.15.5",
+    "@vitest/coverage-v8": "^3.2.4",
+    "lodash": "^4.17.21",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "decimal.js": "^10.6.0",
+    "pg": "^8.16.3",
+    "yup": "^1.7.0"
+  }
+}
