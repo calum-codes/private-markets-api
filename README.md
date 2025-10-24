@@ -114,7 +114,7 @@ For all application handlers, presenters, validators and services, there are tes
 
 Some things, for me, were unusual in the spec, but not dealbreakers.
 
-Firstly, currency figures serialized as numbers in JSON format is risky. JSON.parse() -> number will not always result in precise figures. Early in the valiation layer I have deserlialized these into Decimal constructs. If I were to have influence over the API spec, I would recommend communicating currency using strings. In JavaScript there is risk of developer error here, especially if future business logic involves multiplication or division.
+Firstly, currency figures serialized as numbers in JSON format is risky. JSON.parse() -> number will not always result in precise figures. Early in the validation layer I have deserialized these into Decimal constructs. If I were to have influence over the API spec, I would recommend communicating currency using strings. In JavaScript there is risk of developer error here, especially if future business logic involves multiplication or division.
 
 The API spec requires a created_at field, but no updated_at field. I have written business logic for maintaining updated_at fields "under the hood", but this is currently hidden to the API consumer. If the API needs to be expanded in the future to include this, only the presentation layer needs to change.
 
