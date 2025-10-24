@@ -100,10 +100,10 @@ The app is fully compliant with the specification provided: https://storage.goog
 
 It is a layered application adhering to good separation of concerns principles.
 
-- src/index.ts - entry point \
-- api/handlers - responsible for routing and coodinating validation, business logic, and presentation concerns \
-- api/presenters - responsible for presenting the output in accordance with the specification \
-- api/validators - responsible for validating user input \
+- src/index.ts - entry point
+- api/handlers - responsible for routing and coodinating validation, business logic, and presentation concerns
+- api/presenters - responsible for presenting the output in accordance with the specification
+- api/validators - responsible for validating user input
 - services - responsible for all business logic and database access (no separate repository layer, this would be a bit overkill)
 
 I have not used any frameworks or ORMs. Just 3 direct dependencies: "yup", "decimal.js" and "pg". My style is to keep things simple, until they aren't simple any more.
