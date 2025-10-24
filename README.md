@@ -120,4 +120,6 @@ The API spec requires a created_at field, but no updated_at field. I have writte
 
 Errors which are down to the user of the API are responded to with the correct HTTP 4XX code. Errors which are internal are responded to with a 500 Internal Server Error and logged internally.
 
+If I was to do any further refactoring on the application it would probably involve creating some test helpers to improve the efficiency of writing test cases, or deal with the decimal problem in a more scalable and extensible way.
+
 I guess that's it, if you've got any further questions feel free to get in touch. If you've made it this far, it would definitely be nice to get some feedback.
