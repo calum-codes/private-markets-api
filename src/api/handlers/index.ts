@@ -8,6 +8,7 @@ import { postFunds } from "./post-funds";
 import { postInvestmentsFundId } from "./post-investments-fund-id";
 import { postInvestors } from "./post-investors";
 import { putFunds } from "./put-funds";
+import { getAnalyticsFundId } from "./get-analytics-fund-id";
 
 type Route = {
   pattern: RegExp;
@@ -31,6 +32,12 @@ const routes: Route[] = [
     pattern: /^\/funds\/[^/]+$/,
     handlers: {
       GET: getFundsId,
+    },
+  },
+  {
+    pattern: /^\/funds\/[^/]+\/analytics$/,
+    handlers: {
+      GET: getAnalyticsFundId,
     },
   },
   {
